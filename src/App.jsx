@@ -24,7 +24,8 @@ function App() {
 
   const handleClick = async () => {
     try {
-      const response = await axios.get(`https://cors-anywhere.herokuapp.com/https://superheroapi.com/api/858d97920157225c8ab4c66e0be46e26/search/${name}`)
+      const response = await axios.get(`https://cors-proxy-superhero-api.onrender.com/858d97920157225c8ab4c66e0be46e26/getByName/${name}
+`)
 
       setSuperhero(response.data.results[0].image.url)
       setStats(response.data.results[0].powerstats)
@@ -38,7 +39,7 @@ function App() {
   const handleRandom = async () => {
     var number = Math.floor(Math.random() * 731 + 1);
     try {
-      const response = await axios.get(`https://cors-anywhere.herokuapp.com/https://superheroapi.com/api/858d97920157225c8ab4c66e0be46e26/${number}`)
+      const response = await axios.get(`https://cors-proxy-superhero-api.onrender.com/858d97920157225c8ab4c66e0be46e26/getById/${number}`)
 
       setSuperhero(response.data.image.url)
       setStats(response.data.powerstats)
